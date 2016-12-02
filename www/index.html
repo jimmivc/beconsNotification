@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="viewport" content="width=device-width, user-scalable=no,
+			initial-scale=1, maximum-scale=1, minimum-scale=1" />
+		<link rel="stylesheet" href="css/app.css" />
+		<title>Clicker</title>
+		<script>
+		if (window.hyper) { console.log = hyper.log; }
+		</script>
+	</head>
+	<body>
+
+		<div id="id-screen-home" class="style-screen">
+			<div class="style-heading-big style-color-black">Clicker</div>
+			<div id="id-screen-home-button-back"
+				class="style-button-back style-color-red" style="display:none;">Salir</div>
+			<div id="id-screen-home-button-range-beacons"
+				class="style-button style-color-green">Buscar Beacons</div>
+		</div>
+
+		<div  ng-Controller="buscarBeaconController" id="id-screen-range-beacons" class="style-screen">
+			<div class="style-heading-small style-color-black">Beacons</div>
+			<div class="style-button-back style-color-green">Atrás</div>
+			<div class="style-item-list"></div>
+			<!-- <audio controls autoplay id="beacon-media">
+
+			</audio>  -->
+
+			<div id="beacon-media"></div>
+
+			<div id="beacons-history">beacons history</div>
+
+			<!-- class="style-item-list">Resultados</div> -->
+		</div>
+
+		<script src="cordova.js"></script>
+		<script src="js/lib/jquery-2.1.1.min.js"></script>
+		<script src="js/lib/touch.js"></script>
+		<script src="js/lib/angular.min.js"></script>
+		<script src="js/app.js"></script>
+		
+		 <script src="js/screen-range-beacons.js"></script>
+		
+		
+		<script>
+		// Hide back button if we referrer is empty.
+		var hasReferrer = document.referrer && document.referrer != '';
+		if (!hasReferrer)
+		{
+      		$('#id-screen-home-button-back').hide();
+      	}
+
+		// Setup button handlers.
+		evothings.touch.onTap(
+			$('#id-screen-home-button-back')[0],
+			app.onNavigateBack);
+		
+		evothings.touch.onTap(
+			$('#id-screen-home-button-range-beacons')[0],
+			app.startRangingBeacons);
+		
+		// Back buttons on each screen.
+		
+			evothings.touch.onTap(
+				$('#id-screen-range-beacons div.style-button-back')[0],
+			app.stopRangingBeacons);
+
+		// Hide buttons on Android.
+		var isAndroid =
+			navigator.userAgent.match(/Android/) ||
+			navigator.userAgent.match(/android/);
+		if (isAndroid)
+		{
+      		//do something?
+      	}
+		</script>
+
+	</body>
+</html>
