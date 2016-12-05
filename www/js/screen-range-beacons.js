@@ -91,6 +91,13 @@
 			    $('#beacon-media').append('<p>datos registrados</p>');
 			});
 
+			cordova.plugins.notification.local.schedule({
+			    title: "holanda!",
+			    message: "Hi, are you ready? cuz im not"
+			    // sound: "file://sounds/message.mp3",
+			    // icon: "http://my.domain.de/avatar/user#id=123"
+			});
+
 			cordova.plugins.notification.local.on("click", function (notification) {
 			    joinMeeting(notification.data.meetingId);
 			});
