@@ -91,6 +91,10 @@
 			    $('#beacon-media').append('<p>datos registrados</p>');
 			});
 
+			cordova.plugins.notification.local.on("click", function (notification) {
+			    joinMeeting(notification.data.meetingId);
+			});
+
 			var beacons = JSON.parse(localStorage.getItem('beacons'));
 			beacons.push(beacon.macAddress);
 			$('#beacons-history').append('<p>'+beacon.macAddress+'</p>')
