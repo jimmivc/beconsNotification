@@ -13,7 +13,7 @@
     <access origin="*"/>
     <plugin name="cordova-plugin-estimote" source="npm" />
     <plugin name="cordova-plugin-whitelist" source="npm" />
-    <plugin name="de.appplant.cordova.plugin.local-notification@0.8.1" source="npm" />
+    <plugin name="https://github.com/katzer/cordova-plugin-local-notifications" source="npm" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
 </widget>
