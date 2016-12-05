@@ -5,7 +5,7 @@
 	// 	console.log('nothingController');
 	// });
 	// 'F1:A5:A6:CF:98:BC'
-	beaconsIdsList = ['E1:0D:88:DA:70:BA'];
+	beaconsIdsList = ['E1:0D:88:DA:70:BA','F1:A5:A6:CF:98:BC'];
 	beaconDistance = 2;
 
 	app.startRangingBeacons = function()
